@@ -1,0 +1,561 @@
+/* Premium visual enhancements for Home.tsx.
+   Keep this stylesheet separate from Home.tsx. */
+
+.home-premium {
+  --home-content-width: 1320px;
+  --home-accent: var(--brand-primary, #22AF68);
+  --home-ambient-opacity: 0.08;
+  --home-divider-color: rgba(34, 175, 104, 0.14);
+
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-width: 0;
+  color: inherit;
+}
+
+.home-premium,
+.home-premium * {
+  box-sizing: border-box;
+}
+
+.home-premium__chapter {
+  --chapter-glow-a: rgba(34, 175, 104, 0.10);
+  --chapter-glow-b: rgba(53, 224, 146, 0.07);
+
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Decorative layers never block links or buttons. */
+.home-premium__ambient {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: var(--home-ambient-opacity);
+  background-image:
+    radial-gradient(ellipse at 12% 22%, var(--chapter-glow-a) 0%, transparent 54%),
+    radial-gradient(ellipse at 88% 76%, var(--chapter-glow-b) 0%, transparent 52%);
+  background-repeat: no-repeat;
+  background-size: 125% 125%, 115% 115%;
+  animation: homeAmbientDrift 24s ease-in-out infinite alternate;
+}
+
+.home-premium__chapter > :not(.home-premium__ambient) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero: the existing component keeps control of its image/content. */
+.home-premium__hero {
+  --chapter-glow-a: rgba(34, 175, 104, 0.14);
+  --chapter-glow-b: rgba(53, 224, 146, 0.10);
+  background-color: transparent;
+}
+
+.home-premium__ambient--hero {
+  opacity: 0.24;
+  background-image:
+    radial-gradient(ellipse at 18% 20%, rgba(34, 175, 104, 0.16) 0%, transparent 52%),
+    radial-gradient(ellipse at 82% 72%, rgba(53, 224, 146, 0.11) 0%, transparent 48%);
+  background-size: 140% 140%, 125% 125%;
+}
+
+.home-premium__services {
+  --chapter-glow-a: rgba(34, 175, 104, 0.10);
+  --chapter-glow-b: rgba(14, 92, 54, 0.07);
+}
+
+.home-premium__media {
+  --chapter-glow-a: rgba(34, 175, 104, 0.10);
+  --chapter-glow-b: rgba(53, 224, 146, 0.08);
+}
+
+.home-premium__content {
+  position: relative;
+  width: 100%;
+  max-width: var(--home-content-width);
+  min-width: 0;
+  margin-inline: auto;
+}
+
+.home-premium__clarity {
+  --chapter-glow-a: rgba(34, 175, 104, 0.09);
+  --chapter-glow-b: rgba(53, 224, 146, 0.08);
+}
+
+.home-premium__ambient--clarity {
+  background-image:
+    radial-gradient(ellipse at 15% 32%, rgba(34, 175, 104, 0.11) 0%, transparent 48%),
+    radial-gradient(ellipse at 85% 68%, rgba(53, 224, 146, 0.08) 0%, transparent 50%);
+}
+
+.home-premium__expertise {
+  --chapter-glow-a: rgba(34, 175, 104, 0.09);
+  --chapter-glow-b: rgba(14, 92, 54, 0.07);
+}
+
+.home-premium__ambient--expertise {
+  background-image:
+    radial-gradient(ellipse at 80% 24%, rgba(34, 175, 104, 0.10) 0%, transparent 48%),
+    radial-gradient(ellipse at 18% 72%, rgba(53, 224, 146, 0.08) 0%, transparent 50%);
+}
+
+.home-premium__collaboration {
+  --chapter-glow-a: rgba(34, 175, 104, 0.11);
+  --chapter-glow-b: rgba(53, 224, 146, 0.07);
+}
+
+.home-premium__ambient--collaboration {
+  background-image:
+    radial-gradient(ellipse at 20% 24%, rgba(34, 175, 104, 0.12) 0%, transparent 48%),
+    radial-gradient(ellipse at 80% 78%, rgba(53, 224, 146, 0.08) 0%, transparent 52%);
+  background-size: 135% 135%, 120% 120%;
+}
+
+.home-premium__data-flow {
+  --chapter-glow-a: rgba(34, 175, 104, 0.11);
+  --chapter-glow-b: rgba(53, 224, 146, 0.08);
+}
+
+.home-premium__ambient--data-flow {
+  background-image:
+    radial-gradient(ellipse at 22% 28%, rgba(34, 175, 104, 0.11) 0%, transparent 48%),
+    radial-gradient(ellipse at 80% 74%, rgba(53, 224, 146, 0.08) 0%, transparent 50%);
+}
+
+.home-premium__insights {
+  --chapter-glow-a: rgba(34, 175, 104, 0.09);
+  --chapter-glow-b: rgba(53, 224, 146, 0.07);
+}
+
+.home-premium__ambient--insights {
+  background-image:
+    radial-gradient(ellipse at 78% 22%, rgba(34, 175, 104, 0.10) 0%, transparent 50%),
+    radial-gradient(ellipse at 18% 78%, rgba(53, 224, 146, 0.08) 0%, transparent 50%);
+}
+
+.home-premium__closing {
+  --chapter-glow-a: rgba(34, 175, 104, 0.13);
+  --chapter-glow-b: rgba(53, 224, 146, 0.09);
+}
+
+.home-premium__ambient--closing {
+  background-image:
+    radial-gradient(ellipse at 20% 30%, rgba(34, 175, 104, 0.14) 0%, transparent 50%),
+    radial-gradient(ellipse at 82% 65%, rgba(53, 224, 146, 0.10) 0%, transparent 48%);
+  background-size: 135% 135%, 125% 125%;
+}
+
+/* Fine visual dividers between the long-form chapters. */
+.home-premium__services::after,
+.home-premium__clarity::after,
+.home-premium__expertise::after,
+.home-premium__collaboration::after,
+.home-premium__data-flow::after,
+.home-premium__insights::after {
+  content: "";
+  position: absolute;
+  left: max(24px, calc((100% - var(--home-content-width)) / 2));
+  right: max(24px, calc((100% - var(--home-content-width)) / 2));
+  bottom: 0;
+  height: 1px;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, var(--home-divider-color), transparent);
+}
+
+.home-premium a,
+.home-premium button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home-premium a,
+  .home-premium button {
+    transition:
+      color 220ms ease,
+      background-color 220ms ease,
+      border-color 220ms ease,
+      box-shadow 220ms ease;
+  }
+}
+
+/* Theme selectors are intentionally limited to this page's effects. */
+:root[data-theme="dark"] .home-premium,
+[data-theme="dark"] .home-premium,
+.dark .home-premium,
+html.dark .home-premium {
+  --home-ambient-opacity: 0.16;
+  --home-divider-color: rgba(53, 224, 146, 0.16);
+}
+
+:root[data-theme="light"] .home-premium,
+[data-theme="light"] .home-premium,
+.light .home-premium,
+html.light .home-premium {
+  --home-ambient-opacity: 0.08;
+  --home-divider-color: rgba(34, 175, 104, 0.15);
+}
+
+@media (max-width: 1024px) {
+  .home-premium {
+    --home-content-width: 100%;
+  }
+
+  .home-premium__ambient {
+    background-size: 150% 150%, 135% 135%;
+  }
+
+  .home-premium__services::after,
+  .home-premium__clarity::after,
+  .home-premium__expertise::after,
+  .home-premium__collaboration::after,
+  .home-premium__data-flow::after,
+  .home-premium__insights::after {
+    left: 24px;
+    right: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .home-premium__ambient {
+    background-size: 175% 155%, 160% 145%;
+    animation-duration: 30s;
+  }
+
+  .home-premium__ambient--hero {
+    opacity: 0.25;
+  }
+
+  .home-premium__services::after,
+  .home-premium__clarity::after,
+  .home-premium__expertise::after,
+  .home-premium__collaboration::after,
+  .home-premium__data-flow::after,
+  .home-premium__insights::after {
+    left: 20px;
+    right: 20px;
+  }
+
+  .home-premium__content {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 390px) {
+  .home-premium__services::after,
+  .home-premium__clarity::after,
+  .home-premium__expertise::after,
+  .home-premium__collaboration::after,
+  .home-premium__data-flow::after,
+  .home-premium__insights::after {
+    left: 16px;
+    right: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-premium__ambient {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .home-premium a,
+  .home-premium button {
+    transition: none !important;
+  }
+}
+
+@keyframes homeAmbientDrift {
+  0% {
+    background-position: 0% 0%, 100% 100%;
+  }
+
+  50% {
+    background-position: 35% 25%, 65% 75%;
+  }
+
+  100% {
+    background-position: 100% 50%, 0% 40%;
+  }
+}
+
+
+/* ========================================================================
+   PREMIUM LIVE MOTION LAYER — LIGHT + DARK THEMES
+   Scoped to .home-premium; no global header or other route styling.
+======================================================================== */
+.home-premium {
+  --home-pointer-x: 50%;
+  --home-pointer-y: 18%;
+  --home-rgb-teal: rgba(34, 175, 104, 0.10);
+  --home-rgb-cyan: rgba(53, 224, 146, 0.07);
+  --home-rgb-gold: rgba(39, 193, 119, 0.06);
+  --home-card-glow: rgba(34, 175, 104, 0.18);
+  --home-card-shadow: rgba(11, 20, 14, 0.12);
+  --home-background-overlay: rgba(255, 255, 255, 0.90);
+  /* This image sits behind the entire homepage and stays fixed while scrolling. */
+  background:
+    radial-gradient(ellipse at 12% 6%, rgba(34, 175, 104, 0.06), transparent 38rem),
+    radial-gradient(ellipse at 88% 44%, rgba(53, 224, 146, 0.045), transparent 34rem),
+    linear-gradient(var(--home-background-overlay), var(--home-background-overlay)),
+    url("./home-premium-bg.png");
+  background-size: auto, auto, auto, cover;
+  background-position: center, center, center, center;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-attachment: scroll, scroll, scroll, fixed;
+  overflow: clip;
+}
+
+.home-premium::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.85;
+  background:
+    radial-gradient(460px circle at var(--home-pointer-x) var(--home-pointer-y), var(--home-rgb-teal), transparent 72%),
+    radial-gradient(360px circle at calc(var(--home-pointer-x) + 9%) calc(var(--home-pointer-y) + 3%), var(--home-rgb-cyan), transparent 74%),
+    radial-gradient(420px circle at calc(var(--home-pointer-x) - 8%) calc(var(--home-pointer-y) + 7%), var(--home-rgb-gold), transparent 76%);
+  transition: opacity 240ms ease;
+}
+
+.home-premium::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0.72;
+  background: linear-gradient(90deg, transparent, #22AF68 25%, #35E092 50%, #27C177 75%, transparent);
+  background-size: 220% 100%;
+  animation: homeRgbSweep 9s linear infinite;
+}
+
+.home-premium__chapter {
+  transition: background-color 300ms ease;
+}
+
+.home-premium__chapter:not(.home-premium__hero) {
+  background-color: transparent;
+}
+
+/* Ambient layers gain a subtle brand green drift. */
+.home-premium__ambient {
+  background-blend-mode: screen, screen;
+  will-change: background-position, opacity;
+  transform: translateZ(0);
+}
+
+.home-premium__ambient::after {
+  content: "";
+  position: absolute;
+  inset: -10%;
+  pointer-events: none;
+  opacity: 0.35;
+  background:
+    radial-gradient(ellipse at 48% 45%, rgba(53, 224, 146, 0.08), transparent 36%),
+    radial-gradient(ellipse at 68% 56%, rgba(34, 175, 104, 0.06), transparent 42%);
+  background-size: 140% 140%;
+  animation: homeAmbientBreath 12s ease-in-out infinite alternate;
+}
+
+/* Fine hover lighting for cards that exist inside the supplied chapters.
+   CSS individual variables are populated by Home.tsx pointer handlers. */
+.home-premium [data-home-rgb-active="true"] {
+  --home-card-tilt-x: 0deg;
+  --home-card-tilt-y: 0deg;
+  transform: perspective(1000px)
+    rotateX(var(--home-card-tilt-x, 0deg))
+    rotateY(var(--home-card-tilt-y, 0deg))
+    translateY(-2px);
+  transform-style: preserve-3d;
+  border-color: rgba(34, 175, 104, 0.48) !important;
+  box-shadow:
+    0 20px 42px var(--home-card-shadow),
+    0 0 0 1px rgba(53, 224, 146, 0.14),
+    0 0 24px var(--home-card-glow) !important;
+  transition: transform 90ms ease-out, border-color 160ms ease, box-shadow 160ms ease;
+  will-change: transform;
+}
+
+.home-premium [data-home-rgb-active="true"]:focus-within {
+  outline: 2px solid rgba(34, 175, 104, 0.72);
+  outline-offset: 3px;
+}
+
+/* Keep text and primary actions crisp while the card tilts. */
+.home-premium [data-home-rgb-active="true"] > :not(.home-premium__ambient) {
+  backface-visibility: hidden;
+}
+
+/* Broad hover polish that does not impose a transform on existing components. */
+@media (hover: hover) and (pointer: fine) {
+  .home-premium article,
+  .home-premium .glass-panel,
+  .home-premium [data-3d-card] {
+    transition-property: border-color, box-shadow, filter;
+    transition-duration: 240ms;
+    transition-timing-function: ease;
+  }
+
+  .home-premium article:hover,
+  .home-premium .glass-panel:hover,
+  .home-premium [data-3d-card]:hover {
+    filter: saturate(1.035);
+  }
+
+  .home-premium a:hover,
+  .home-premium button:hover {
+    filter: brightness(1.025);
+  }
+}
+
+.home-premium a:focus-visible,
+.home-premium button:focus-visible,
+.home-premium [role="button"]:focus-visible {
+  outline: 2px solid var(--brand-primary, #22AF68);
+  outline-offset: 3px;
+}
+
+/* Light mode: crisp white + subtle green reflections. */
+:root[data-theme="light"] .home-premium,
+[data-theme="light"] .home-premium,
+html.light .home-premium,
+.light .home-premium {
+  --home-ambient-opacity: 0.08;
+  --home-rgb-teal: rgba(34, 175, 104, 0.10);
+  --home-rgb-cyan: rgba(53, 224, 146, 0.07);
+  --home-rgb-gold: rgba(39, 193, 119, 0.06);
+  --home-card-glow: rgba(34, 175, 104, 0.16);
+  --home-card-shadow: rgba(11, 20, 14, 0.10);
+  --home-background-overlay: rgba(255, 255, 255, 0.90);
+  background:
+    radial-gradient(ellipse at 10% 5%, rgba(34, 175, 104, 0.06), transparent 36rem),
+    radial-gradient(ellipse at 92% 42%, rgba(53, 224, 146, 0.045), transparent 34rem),
+    linear-gradient(var(--home-background-overlay), var(--home-background-overlay)),
+    url("./home-premium-bg.png");
+  background-size: auto, auto, auto, cover;
+  background-position: center, center, center, center;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-attachment: scroll, scroll, scroll, fixed;
+}
+
+/* Light mode: hide the ambient::after overlay box that bleeds through white cards */
+:root:not(.dark):not([data-theme="dark"]) .home-premium__ambient::after,
+html:not(.dark):not([data-theme="dark"]) .home-premium__ambient::after {
+  display: none;
+}
+
+/* Light mode: suppress heavy card glow box — keep crisp emerald border+shadow only */
+:root:not(.dark):not([data-theme="dark"]) .home-premium [data-home-rgb-active="true"],
+html:not(.dark):not([data-theme="dark"]) .home-premium [data-home-rgb-active="true"] {
+  border-color: rgba(34, 175, 104, 0.36) !important;
+  box-shadow:
+    0 12px 28px rgba(11, 20, 14, 0.09),
+    0 0 0 1px rgba(34, 175, 104, 0.14) !important;
+}
+
+/* Dark mode: deep greenish-dark with luminous logo green ambient lighting. */
+:root[data-theme="dark"] .home-premium,
+[data-theme="dark"] .home-premium,
+.dark .home-premium,
+html.dark .home-premium {
+  --home-ambient-opacity: 0.18;
+  --home-divider-color: rgba(53, 224, 146, 0.16);
+  --home-rgb-teal: rgba(53, 224, 146, 0.15);
+  --home-rgb-cyan: rgba(34, 175, 104, 0.12);
+  --home-rgb-gold: rgba(88, 234, 166, 0.09);
+  --home-card-glow: rgba(53, 224, 146, 0.22);
+  --home-card-shadow: rgba(0, 0, 0, 0.42);
+  --home-background-overlay: rgba(6, 17, 12, 0.78);
+  background:
+    radial-gradient(ellipse at 9% 8%, rgba(53, 224, 146, 0.10), transparent 36rem),
+    radial-gradient(ellipse at 88% 45%, rgba(34, 175, 104, 0.08), transparent 34rem),
+    linear-gradient(var(--home-background-overlay), var(--home-background-overlay)),
+    url("./home-premium-bg.png");
+  background-size: auto, auto, auto, cover;
+  background-position: center, center, center, center;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-attachment: scroll, scroll, scroll, fixed;
+}
+
+/* Theme-specific ambient levels. */
+:root[data-theme="dark"] .home-premium__ambient,
+[data-theme="dark"] .home-premium__ambient,
+.dark .home-premium__ambient,
+html.dark .home-premium__ambient {
+  opacity: max(var(--home-ambient-opacity), 0.14);
+}
+
+:root[data-theme="light"] .home-premium__ambient,
+[data-theme="light"] .home-premium__ambient,
+.light .home-premium__ambient,
+html.light .home-premium__ambient {
+  opacity: min(var(--home-ambient-opacity), 0.11);
+}
+
+/* Responsive tuning */
+@media (max-width: 767px) {
+  .home-premium::before {
+    opacity: 0.62;
+    background-size: 220px 220px, 210px 210px, 240px 240px;
+  }
+
+  .home-premium::after {
+    height: 1px;
+    animation-duration: 14s;
+  }
+
+  .home-premium [data-home-rgb-active="true"] {
+    transform: none;
+    box-shadow: 0 0 0 1px rgba(34, 175, 104, 0.22) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Fixed backgrounds can be expensive on mobile; keep the same visual locally. */
+  .home-premium {
+    background-attachment: scroll, scroll, scroll, scroll;
+    background-position: center, center, center, center;
+    background-size: auto, auto, auto, cover;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-premium::before,
+  .home-premium::after,
+  .home-premium__ambient::after,
+  .home-premium__ambient {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .home-premium [data-home-rgb-active="true"] {
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+@keyframes homeRgbSweep {
+  0% { background-position: 100% 50%; }
+  100% { background-position: -120% 50%; }
+}
+
+@keyframes homeAmbientBreath {
+  0% { opacity: 0.24; transform: translate3d(-1%, 0, 0) scale(0.98); }
+  100% { opacity: 0.55; transform: translate3d(1%, -1%, 0) scale(1.035); }
+}
+

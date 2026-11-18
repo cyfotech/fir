@@ -1,0 +1,14 @@
+{
+  "name": "preferred-tax-consultancy",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "preview": "cd frontend && npm run preview",
+    "lint": "cd frontend && npm run lint"
+  },
+  "devDependencies": {
+    "vite": "^8.3.8"
+  }
+}

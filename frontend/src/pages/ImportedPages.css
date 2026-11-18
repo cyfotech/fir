@@ -1,0 +1,895 @@
+/* ==========================================================================
+   PREFERRED TAX CONSULTANCY — IMPORTED PAGES THEME & ALIGNMENT STYLESHEET
+   Harmonizes the 5 reference pages with the website's exact theme, color palette,
+   typography, and layout alignment for BOTH Light Mode and Dark Mode.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. HIDE INTERNAL STANDALONE HEADERS & FOOTERS
+   The host website provides its own floating Navbar and comprehensive Footer.
+   -------------------------------------------------------------------------- */
+[data-document-role="page"]>header,
+[data-document-role="page"] header:first-of-type,
+[data-document-role="page"] header[style*="sticky"],
+div.r>header,
+div.stp>header,
+div.stx>header {
+  display: none !important;
+}
+
+[data-document-role="page"]>footer,
+[data-document-role="page"] footer:last-of-type,
+div.r>footer,
+div.stp>footer,
+div.stx>footer {
+  display: none !important;
+}
+
+/* Ensure the host website's floating Navbar stays elevated */
+.ptc-navbar {
+  z-index: 100 !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. TYPOGRAPHY & FONT STYLES
+   Harmonize all text with the site's primary and serif typography.
+   -------------------------------------------------------------------------- */
+[data-document-role="page"],
+div.r,
+div.stp,
+div.stx {
+  font-family: var(--font-primary) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[data-document-role="page"] .h,
+[data-document-role="page"] .d,
+[data-document-role="page"] .disp,
+[data-document-role="page"] h1,
+[data-document-role="page"] h2,
+[data-document-role="page"] h3,
+[data-document-role="page"] h4 {
+  font-family: var(--font-primary) !important;
+}
+
+/* Selective editorial serif accents */
+[data-document-role="page"] .serif,
+[data-document-role="page"] h1 em,
+[data-document-role="page"] h2 em,
+[data-document-role="page"] h3 em,
+[data-document-role="page"] .h em,
+[data-document-role="page"] .d em,
+[data-document-role="page"] .disp em,
+[data-document-role="page"] [class*="serif"],
+div.r .serif,
+div.stp .serif,
+div.stx .serif {
+  font-family: var(--font-editorial) !important;
+}
+
+/* Monospace eyebrows, stats, codes, and badges */
+[data-document-role="page"] .mono,
+[data-document-role="page"] .m,
+[data-document-role="page"] .eb,
+[data-document-role="page"] [class*="mono"],
+[data-document-role="page"] code,
+div.r code,
+div.r .mono,
+div.r .m,
+div.r .eb {
+  font-family: var(--font-mono) !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. HERO PADDING & NAVBAR CLEARANCE
+   Ensures the hero content and headlines start with comfortable breathing room
+   below the host site's floating Navbar (~96px tall).
+   -------------------------------------------------------------------------- */
+/* MainServicesPage */
+[data-document-role="page"] section#top>div[style*="max-width"] {
+  padding-top: clamp(100px, 11vw, 132px) !important;
+}
+
+/* TaxPlanningPage & TaxPreparationPage */
+div.stp section#top>div[style*="max-width"],
+div.stx section#top>div[style*="max-width"] {
+  padding-top: clamp(100px, 11vw, 132px) !important;
+}
+
+/* BookkeepingPage */
+div.r section#top>div.wrap,
+div.r section#top>div[style*="clamp"] {
+  padding-top: clamp(100px, 11vw, 132px) !important;
+}
+
+/* ContactPage */
+[data-document-role="page"] section#top>div[style*="1320px"],
+[data-document-role="page"] section#top>div.pad,
+[data-document-role="page"] section#top>div[style*="padding"] {
+  padding-top: clamp(100px, 11vw, 132px) !important;
+}
+
+/* Sticky sub-navigation (e.g. in MainServicesPage) docks below website navbar */
+[data-document-role="page"] div[style*="position: sticky"][style*="top:"],
+[data-document-role="page"] div[style*="position:sticky"][style*="top:"] {
+  top: 86px !important;
+  z-index: 45 !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. LIGHT MODE STYLING & ACCENTS
+   Crisp readability, high contrast, signature emerald & mint buttons.
+   -------------------------------------------------------------------------- */
+[data-document-role="page"] .btn-mint,
+[data-document-role="page"] .btn-p,
+[data-document-role="page"] a[class*="btn-mint"],
+[data-document-role="page"] a[class*="btn-p"] {
+  background: #22AF68 !important;
+  color: #FFFFFF !important;
+  transition: all 0.25s ease !important;
+}
+
+[data-document-role="page"] .btn-mint:hover,
+[data-document-role="page"] .btn-p:hover,
+[data-document-role="page"] a[class*="btn-mint"]:hover,
+[data-document-role="page"] a[class*="btn-p"]:hover {
+  background: #1A8F54 !important;
+  box-shadow: 0 8px 24px rgba(34, 175, 104, 0.34) !important;
+  transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   5. COMPLETE DARK MODE ENGINE (.dark)
+   Deep greenish-dark surfaces (#06110C / #0B1B13 / #0E2017), luminous green
+   accents (#35E092), and high-contrast crisp text (#F2FAF5 / #CFE0D6).
+   -------------------------------------------------------------------------- */
+.dark [data-document-role="page"],
+.dark div.r,
+.dark div.stp,
+.dark div.stx {
+  background: #06110C !important;
+  color: #F2FAF5 !important;
+}
+
+/* Dark mode section backgrounds */
+.dark [data-document-role="page"] section {
+  background: #06110C !important;
+  border-color: rgba(53, 224, 146, 0.14) !important;
+}
+
+.dark [data-document-role="page"] section[style*="#FFFFFF"],
+.dark [data-document-role="page"] section[style*="#ffffff"],
+.dark [data-document-role="page"] section[style*="#F4FAF6"],
+.dark [data-document-role="page"] section[style*="#f4faf6"],
+.dark [data-document-role="page"] section[style*="#EAF6EE"],
+.dark [data-document-role="page"] section[style*="#eaf6ee"],
+.dark [data-document-role="page"] section[style*="#EEF9F3"],
+.dark [data-document-role="page"] section[style*="#eef9f3"],
+.dark [data-document-role="page"] section[style*="#F7F5F0"],
+.dark [data-document-role="page"] section[style*="#f7f5f0"],
+.dark [data-document-role="page"] section[style*="#F4F5F1"],
+.dark [data-document-role="page"] section[style*="#f4f5f1"],
+.dark [data-document-role="page"] section[style*="#F2F5F3"],
+.dark [data-document-role="page"] section[style*="#f2f5f3"],
+.dark [data-document-role="page"] section[style*="#EAE3D5"],
+.dark [data-document-role="page"] section[style*="#FFFDF8"] {
+  background: #0B1B13 !important;
+  border-color: rgba(53, 224, 146, 0.16) !important;
+}
+
+/* Keep designated dark hero / consult sections in deep forest ground */
+.dark [data-document-role="page"] section#top,
+.dark [data-document-role="page"] section#consult,
+.dark [data-document-role="page"] section#forms,
+.dark [data-document-role="page"] section#process,
+.dark [data-document-role="page"] section#lab,
+.dark [data-document-role="page"] section#outsourcing,
+.dark [data-document-role="page"] section#close,
+.dark [data-document-role="page"] section#quality,
+.dark [data-document-role="page"] section#who,
+.dark [data-document-role="page"] section#start,
+.dark [data-document-role="page"] section#paths {
+  background: #06110C !important;
+}
+
+/* Dark mode cards, panels, and containers */
+.dark [data-document-role="page"] div[style*="border-radius: 24px"],
+.dark [data-document-role="page"] div[style*="border-radius:24px"],
+.dark [data-document-role="page"] div[style*="border-radius: 28px"],
+.dark [data-document-role="page"] div[style*="border-radius:28px"],
+.dark [data-document-role="page"] div[style*="border-radius: 32px"],
+.dark [data-document-role="page"] div[style*="border-radius:32px"],
+.dark [data-document-role="page"] div[style*="border-radius: 20px"],
+.dark [data-document-role="page"] div[style*="border-radius:20px"],
+.dark [data-document-role="page"] div[style*="border-radius: 18px"],
+.dark [data-document-role="page"] div[style*="border-radius:18px"],
+.dark [data-document-role="page"] div[style*="border-radius: 16px"],
+.dark [data-document-role="page"] div[style*="border-radius:16px"],
+.dark [data-document-role="page"] div[style*="background: #F4FAF6"],
+.dark [data-document-role="page"] div[style*="background:#F4FAF6"],
+.dark [data-document-role="page"] div[style*="background: #EAF6EE"],
+.dark [data-document-role="page"] div[style*="background:#EAF6EE"],
+.dark [data-document-role="page"] div[style*="background: #EEF9F3"],
+.dark [data-document-role="page"] div[style*="background:#EEF9F3"],
+.dark [data-document-role="page"] div[style*="background: #F7F5F0"],
+.dark [data-document-role="page"] div[style*="background:#F7F5F0"],
+.dark [data-document-role="page"] div[style*="background: #FFFFFF"],
+.dark [data-document-role="page"] div[style*="background:#FFFFFF"],
+.dark [data-document-role="page"] div[style*="background: #fff"],
+.dark [data-document-role="page"] div[style*="background:#fff"],
+.dark [data-document-role="page"] div[style*="background: #F4F5F1"],
+.dark [data-document-role="page"] div[style*="background:#F4F5F1"],
+.dark [data-document-role="page"] div[style*="background: #F2F5F3"],
+.dark [data-document-role="page"] div[style*="background:#F2F5F3"],
+.dark [data-document-role="page"] div[style*="background: #FFFDF8"],
+.dark [data-document-role="page"] div[style*="background:#FFFDF8"],
+.dark [data-document-role="page"] div[style*="background: #EAE3D5"],
+.dark [data-document-role="page"] div[style*="background:#EAE3D5"],
+.dark [data-document-role="page"] .card,
+.dark [data-document-role="page"] .box,
+.dark [data-document-role="page"] .panel {
+  background: #0E2017 !important;
+  color: #F2FAF5 !important;
+  border-color: rgba(53, 224, 146, 0.22) !important;
+}
+
+/* STILL WONDERING card in #explorer */
+.dark #explorer div[style*="flex: 1 1 300px"],
+.dark #explorer div[style*="border-radius: 24px"],
+.dark #explorer div[style*="border-radius:24px"] {
+  background: #0E2017 !important;
+  border: 1px solid rgba(53, 224, 146, 0.26) !important;
+  color: #F2FAF5 !important;
+}
+
+/* High-contrast headings in dark mode */
+.dark [data-document-role="page"] .h,
+.dark [data-document-role="page"] h1,
+.dark [data-document-role="page"] h2,
+.dark [data-document-role="page"] h3,
+.dark [data-document-role="page"] h4,
+.dark [data-document-role="page"] .disp {
+  color: #F2FAF5 !important;
+}
+
+/* Questions and title text */
+.dark #explorer .h,
+.dark #explorer div[style*="font-size: 24px"],
+.dark #explorer div[style*="font-size:24px"] {
+  color: #F2FAF5 !important;
+}
+
+/* Eyebrows and mono labels */
+.dark [data-document-role="page"] .mono[style*="#147946"],
+.dark [data-document-role="page"] [style*="color: #147946"],
+.dark [data-document-role="page"] [style*="color:#147946"],
+.dark [data-document-role="page"] .mono[style*="#22AF68"],
+.dark [data-document-role="page"] [style*="color: #22AF68"],
+.dark [data-document-role="page"] [style*="color:#22AF68"],
+.dark [data-document-role="page"] .mono[style*="#0D7A63"],
+.dark [data-document-role="page"] [style*="color: #0D7A63"],
+.dark [data-document-role="page"] [style*="color:#0D7A63"],
+.dark [data-document-role="page"] [style*="color: #0B7A44"],
+.dark [data-document-role="page"] [style*="color:#0B7A44"] {
+  color: #35E092 !important;
+}
+
+/* Muted / secondary copy — ensure high contrast */
+.dark [data-document-role="page"] div[style*="color: #46594E"],
+.dark [data-document-role="page"] div[style*="color:#46594E"],
+.dark [data-document-role="page"] div[style*="color: #233229"],
+.dark [data-document-role="page"] div[style*="color:#233229"],
+.dark [data-document-role="page"] div[style*="color: #4C5654"],
+.dark [data-document-role="page"] div[style*="color:#4C5654"],
+.dark [data-document-role="page"] div[style*="color: #5A6472"],
+.dark [data-document-role="page"] div[style*="color:#5A6472"],
+.dark [data-document-role="page"] div[style*="color: #6B7280"],
+.dark [data-document-role="page"] div[style*="color:#6B7280"],
+.dark [data-document-role="page"] div[style*="color: #3A4555"],
+.dark [data-document-role="page"] div[style*="color:#3A4555"],
+.dark [data-document-role="page"] p[style*="color: #46594E"],
+.dark [data-document-role="page"] p[style*="color:#46594E"],
+.dark [data-document-role="page"] p[style*="color: #4C5654"],
+.dark [data-document-role="page"] p[style*="color:#4C5654"] {
+  color: #CFE0D6 !important;
+}
+
+/* Interactive card buttons and action pills */
+.dark [data-document-role="page"] .doubt,
+.dark #explorer .doubt {
+  background: #0B1B13 !important;
+  color: #35E092 !important;
+  border: 1px solid rgba(53, 224, 146, 0.35) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4) !important;
+}
+
+.dark [data-document-role="page"] .doubt:hover,
+.dark #explorer .doubt:hover {
+  background: #142B1F !important;
+  color: #58EAA6 !important;
+  border-color: #35E092 !important;
+}
+
+/* Text links */
+.dark [data-document-role="page"] .lnk,
+.dark #explorer .lnk {
+  color: #35E092 !important;
+}
+
+/* Small tags, chips, and key forms */
+.dark [data-document-role="page"] span[style*="background: #F4FAF6"],
+.dark [data-document-role="page"] span[style*="background:#F4FAF6"],
+.dark [data-document-role="page"] span[style*="background: #F7F5F0"],
+.dark [data-document-role="page"] span[style*="background:#F7F5F0"],
+.dark [data-document-role="page"] span[style*="background: #FFFFFF"],
+.dark [data-document-role="page"] span[style*="background:#FFFFFF"],
+.dark [data-document-role="page"] span[style*="background: #fff"],
+.dark [data-document-role="page"] span[style*="background:#fff"],
+.dark [data-document-role="page"] span.mono {
+  background: #11261B !important;
+  color: #35E092 !important;
+  border-color: rgba(53, 224, 146, 0.25) !important;
+}
+
+/* Form inputs & textareas in dark mode */
+.dark [data-document-role="page"] input,
+.dark [data-document-role="page"] textarea,
+.dark [data-document-role="page"] select {
+  background: #0B1B13 !important;
+  color: #F2FAF5 !important;
+  border-color: rgba(53, 224, 146, 0.3) !important;
+}
+
+.dark [data-document-role="page"] input::placeholder,
+.dark [data-document-role="page"] textarea::placeholder {
+  color: #93AB9D !important;
+}
+
+/* Primary buttons in dark mode glow in luminous green with deep ink contrast */
+.dark [data-document-role="page"] .btn-mint,
+.dark [data-document-role="page"] .btn-p,
+.dark [data-document-role="page"] a[class*="btn-mint"],
+.dark [data-document-role="page"] a[class*="btn-p"] {
+  background: #35E092 !important;
+  color: #04170D !important;
+}
+
+.dark [data-document-role="page"] .btn-mint:hover,
+.dark [data-document-role="page"] .btn-p:hover,
+.dark [data-document-role="page"] a[class*="btn-mint"]:hover,
+.dark [data-document-role="page"] a[class*="btn-p"]:hover {
+  background: #58EAA6 !important;
+  box-shadow: 0 8px 24px rgba(53, 224, 146, 0.38) !important;
+}
+
+/* Table rows and borders in dark mode */
+.dark [data-document-role="page"] table,
+.dark [data-document-role="page"] tr,
+.dark [data-document-role="page"] td,
+.dark [data-document-role="page"] th {
+  border-color: rgba(53, 224, 146, 0.16) !important;
+  color: #F2FAF5 !important;
+}
+
+/* ====================================================================
+   USA TAX PREPARATION PAGE (.stx) DARK & LIGHT WATERMARK & VISIBILITY
+   ==================================================================== */
+
+/* Watermark background numbers (e.g. 1040, 1065, LLC, etc.) */
+.stx .outline-num {
+  color: #0B140E !important;
+  -webkit-text-fill-color: #0B140E !important;
+  -webkit-text-stroke: 0 !important;
+  opacity: 0.07 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+
+.dark .stx .outline-num {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  -webkit-text-stroke: 0 !important;
+  opacity: 0.12 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Light theme tab sidebar (01 Direct clients) */
+.stx .rail-btn {
+  color: #0B140E !important;
+  background: transparent !important;
+}
+
+.stx .rail-btn span:first-child {
+  color: #46594E !important;
+  opacity: 0.85 !important;
+}
+
+.stx .rail-btn span:nth-child(2) {
+  color: #0B140E !important;
+}
+
+.stx .rail-btn .rf {
+  color: #147946 !important;
+  opacity: 0.9 !important;
+}
+
+.stx .rail-btn:hover {
+  background: rgba(34, 175, 104, 0.08) !important;
+  color: #0B140E !important;
+}
+
+.stx .rail-btn.on {
+  background: #22AF68 !important;
+  color: #FFFFFF !important;
+}
+
+.stx .rail-btn.on span,
+.stx .rail-btn.on .rf {
+  color: #FFFFFF !important;
+}
+
+/* Light theme tabpanel text visibility */
+.stx section#services [role="tabpanel"] {
+  position: relative !important;
+}
+
+.stx section#services [role="tabpanel"] h3 {
+  color: #0B140E !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.stx section#services [role="tabpanel"] p {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.stx section#services [role="tabpanel"] p:not(.mono):not(.outline-num) {
+  color: #233229 !important;
+}
+
+.stx section#services [role="tabpanel"] ul {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.stx section#services [role="tabpanel"] li {
+  color: #0B140E !important;
+}
+
+/* Dark mode overrides for tab sidebar */
+.dark .stx .rail-btn {
+  color: #CFE0D6 !important;
+  background: transparent !important;
+}
+
+.dark .stx .rail-btn span:first-child {
+  color: #93AB9D !important;
+  opacity: 0.85 !important;
+}
+
+.dark .stx .rail-btn span:nth-child(2) {
+  color: #F2FAF5 !important;
+}
+
+.dark .stx .rail-btn:hover {
+  background: rgba(53, 224, 146, 0.08) !important;
+  color: #FFFFFF !important;
+}
+
+.dark .stx .rail-btn.on {
+  background: rgba(53, 224, 146, 0.16) !important;
+  border: 1px solid rgba(53, 224, 146, 0.45) !important;
+  color: #FFFFFF !important;
+}
+
+.dark .stx .rail-btn.on span {
+  color: #FFFFFF !important;
+}
+
+.dark .stx .rail-btn .rf {
+  color: #35E092 !important;
+  opacity: 0.92 !important;
+}
+
+/* Service panel content inside tabpanel (Section 01) */
+.dark .stx section#services [role="tabpanel"] {
+  background: #0E2017 !important;
+  border-color: rgba(53, 224, 146, 0.22) !important;
+  color: #F2FAF5 !important;
+}
+
+.dark .stx section#services [role="tabpanel"] h3 {
+  color: #FFFFFF !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.dark .stx section#services [role="tabpanel"] p {
+  color: #CFE0D6 !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.dark .stx section#services [role="tabpanel"] ul {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.dark .stx section#services [role="tabpanel"] li {
+  color: #F2FAF5 !important;
+  border-bottom-color: rgba(53, 224, 146, 0.14) !important;
+}
+
+.dark .stx section#services [role="tabpanel"] li span {
+  background: rgba(53, 224, 146, 0.16) !important;
+  color: #35E092 !important;
+}
+
+/* Step navigation buttons (05 How it works) */
+.dark .stx .step-btn {
+  color: #93AB9D !important;
+}
+
+.dark .stx .step-btn:hover {
+  color: #FFFFFF !important;
+}
+
+.dark .stx .step-btn .dot {
+  background: #142B1F !important;
+  border-color: rgba(53, 224, 146, 0.28) !important;
+  color: #F2FAF5 !important;
+}
+
+.dark .stx .step-btn.on {
+  color: #FFFFFF !important;
+}
+
+.dark .stx .step-btn.on .dot {
+  background: #35E092 !important;
+  border-color: #35E092 !important;
+  color: #04170D !important;
+}
+
+.dark .stx .step-btn.done .dot {
+  background: #0E2017 !important;
+  border-color: #35E092 !important;
+  color: #35E092 !important;
+}
+
+/* Segment controls and tabs in Section 07 (Find your fit) */
+.dark .stx button[role="tab"].chip {
+  background: #11261B !important;
+  color: #CFE0D6 !important;
+  border-color: rgba(53, 224, 146, 0.2) !important;
+}
+
+.dark .stx button[role="tab"].chip:hover {
+  border-color: #35E092 !important;
+  color: #FFFFFF !important;
+}
+
+.dark .stx button[role="tab"].chip.on {
+  background: #35E092 !important;
+  border-color: #35E092 !important;
+  color: #04170D !important;
+}
+
+/* Section 04 Compliance cards */
+.dark .stx article.lift {
+  background: #0E2017 !important;
+  border-color: rgba(53, 224, 146, 0.22) !important;
+  color: #F2FAF5 !important;
+}
+
+.dark .stx article.lift h3 {
+  color: #FFFFFF !important;
+}
+
+.dark .stx article.lift p {
+  color: #CFE0D6 !important;
+}
+
+.dark .stx article.lift span.mono:not([style*="var(--acc)"]) {
+  background: #11261B !important;
+  color: #35E092 !important;
+}
+
+/* Section 07 "Typically involves" right box */
+.dark .stx div[style*="background: #E6ECE8"],
+.dark .stx div[style*="background:#E6ECE8"],
+.dark .stx div[style*="230, 236, 232"],
+.dark .stx div[style*="background: #EAF6EE"],
+.dark .stx div[style*="background:#EAF6EE"] {
+  background: #11261B !important;
+  border-color: rgba(53, 224, 146, 0.22) !important;
+}
+
+.dark .stx div[style*="background: #E6ECE8"] p.mono,
+.dark .stx div[style*="background:#E6ECE8"] p.mono,
+.dark .stx div[style*="230, 236, 232"] p.mono,
+.dark .stx div[style*="background: #EAF6EE"] p.mono,
+.dark .stx div[style*="background:#EAF6EE"] p.mono {
+  color: #58EAA6 !important;
+}
+
+.dark .stx div[style*="background: #E6ECE8"] div[style*="background: #FFFFFF"],
+.dark .stx div[style*="background:#E6ECE8"] div[style*="background:#FFFFFF"],
+.dark .stx div[style*="230, 236, 232"] div[style*="255, 255, 255"],
+.dark .stx div[style*="background: #EAF6EE"] div[style*="background: #FFFFFF"],
+.dark .stx div[style*="background:#EAF6EE"] div[style*="background:#FFFFFF"] {
+  background: #0B1B13 !important;
+  border: 1px solid rgba(53, 224, 146, 0.18) !important;
+}
+
+.dark .stx div[style*="background: #E6ECE8"] div[style*="background: #FFFFFF"] span,
+.dark .stx div[style*="background:#E6ECE8"] div[style*="background:#FFFFFF"] span,
+.dark .stx div[style*="230, 236, 232"] div[style*="255, 255, 255"] span,
+.dark .stx div[style*="background: #EAF6EE"] div[style*="background: #FFFFFF"] span,
+.dark .stx div[style*="background:#EAF6EE"] div[style*="background:#FFFFFF"] span {
+  color: #F2FAF5 !important;
+}
+
+.dark .stx div[style*="background: #E6ECE8"] div[style*="background: #FFFFFF"] span.mono,
+.dark .stx div[style*="background:#E6ECE8"] div[style*="background:#FFFFFF"] span.mono,
+.dark .stx div[style*="230, 236, 232"] div[style*="255, 255, 255"] span.mono,
+.dark .stx div[style*="background: #EAF6EE"] div[style*="background: #FFFFFF"] span.mono,
+.dark .stx div[style*="background:#EAF6EE"] div[style*="background:#FFFFFF"] span.mono {
+  color: #35E092 !important;
+}
+
+/* Bookkeeping Month-end close sample card */
+.dark .stx [role="img"][aria-label*="reconciliation"] {
+  background: #0E2017 !important;
+  border-color: rgba(53, 224, 146, 0.22) !important;
+}
+
+.dark .stx [role="img"][aria-label*="reconciliation"] p {
+  color: #F2FAF5 !important;
+}
+
+.dark .stx [role="img"][aria-label*="reconciliation"] span[style*="#EEF0EC"],
+.dark .stx [role="img"][aria-label*="reconciliation"] span[style*="#F1F3EF"],
+.dark .stx [role="img"][aria-label*="reconciliation"] span[style*="#EEF9F3"] {
+  background: #11261B !important;
+  color: #CFE0D6 !important;
+}
+
+.dark .stx [role="img"][aria-label*="reconciliation"] div[style*="#EEF0EC"],
+.dark .stx [role="img"][aria-label*="reconciliation"] div[style*="#EEF9F3"] {
+  background: rgba(53, 224, 146, 0.12) !important;
+}
+
+.dark .stx [role="img"][aria-label*="reconciliation"] span[style*="#DDF3E9"],
+.dark .stx [role="img"][aria-label*="reconciliation"] span[style*="#E2FAEF"] {
+  background: rgba(53, 224, 146, 0.2) !important;
+  color: #35E092 !important;
+}
+
+/* ====================================================================
+   CAPACITY PLANNER (#planner) THEME-ADAPTIVE CONTRAST
+   Light theme: clean white card (#FFFFFF) with dark text (#0B140E)
+   Dark theme: forest green dark card (#0E2017) with crisp white headings
+   ==================================================================== */
+/* Light theme */
+.stx #planner {
+  background: #FFFFFF !important;
+  color: #0B140E !important;
+  border: 1px solid #D7E7DD !important;
+}
+
+.stx #planner h3 {
+  color: #0B140E !important;
+}
+
+.stx #planner label,
+.stx #planner label span:first-child {
+  color: #233229 !important;
+}
+
+.stx #planner label span.mono {
+  color: #0B140E !important;
+}
+
+.stx #planner [role="img"] {
+  border-bottom-color: #D7E7DD !important;
+}
+
+.stx #planner .mono[aria-hidden="true"] span {
+  color: #46594E !important;
+}
+
+.stx #planner p:last-child {
+  color: #46594E !important;
+}
+
+/* Dark theme */
+.dark .stx #planner {
+  background: #0E2017 !important;
+  color: #F2FAF5 !important;
+  border: 1px solid rgba(53, 224, 146, 0.22) !important;
+  box-shadow: 0 40px 80px -40px rgba(0, 0, 0, 0.8) !important;
+}
+
+.dark .stx #planner h3 {
+  color: #FFFFFF !important;
+}
+
+.dark .stx #planner label,
+.dark .stx #planner label span:first-child {
+  color: #CFE0D6 !important;
+}
+
+.dark .stx #planner label span.mono {
+  color: #35E092 !important;
+}
+
+.dark .stx #planner span[style*="#EEF0EC"],
+.dark .stx #planner span[style*="#EEF9F3"] {
+  background: #11261B !important;
+  color: #35E092 !important;
+}
+
+.dark .stx #planner [role="img"] {
+  border-bottom-color: rgba(53, 224, 146, 0.16) !important;
+}
+
+.dark .stx #planner div[aria-hidden="true"][style*="border-top: 2px dashed"] {
+  border-top-color: #35E092 !important;
+}
+
+.dark .stx #planner div[aria-hidden="true"][style*="border-top: 2px dashed"] span {
+  background: #06110C !important;
+  color: #35E092 !important;
+  border: 1px solid rgba(53, 224, 146, 0.4) !important;
+}
+
+.dark .stx #planner .mono[aria-hidden="true"] span {
+  color: #93AB9D !important;
+}
+
+.dark .stx #planner div[style*="background: #F1F3EF"],
+.dark .stx #planner div[style*="background:#F1F3EF"],
+.dark .stx #planner div[style*="241, 243, 239"],
+.dark .stx #planner div[style*="background: #F4FAF6"],
+.dark .stx #planner div[style*="background:#F4FAF6"] {
+  background: #11261B !important;
+  border: 1px solid rgba(53, 224, 146, 0.18) !important;
+  color: #F2FAF5 !important;
+}
+
+.dark .stx #planner div[style*="background: #F1F3EF"] p.mono,
+.dark .stx #planner div[style*="background:#F1F3EF"] p.mono,
+.dark .stx #planner div[style*="241, 243, 239"] p.mono,
+.dark .stx #planner div[style*="background: #F4FAF6"] p.mono,
+.dark .stx #planner div[style*="background:#F4FAF6"] p.mono {
+  color: #58EAA6 !important;
+}
+
+.dark .stx #planner div[style*="background: #F1F3EF"] p:not(.mono),
+.dark .stx #planner div[style*="background:#F1F3EF"] p:not(.mono),
+.dark .stx #planner div[style*="241, 243, 239"] p:not(.mono),
+.dark .stx #planner div[style*="background: #F4FAF6"] p:not(.mono),
+.dark .stx #planner div[style*="background:#F4FAF6"] p:not(.mono) {
+  color: #FFFFFF !important;
+}
+
+.dark .stx #planner div[style*="background: #0C1A22"],
+.dark .stx #planner div[style*="background:#0C1A22"],
+.dark .stx #planner div[style*="12, 26, 34"],
+.dark .stx #planner div[style*="background: #06110C"],
+.dark .stx #planner div[style*="background:#06110C"] {
+  background: #0B1B13 !important;
+  border: 1px solid rgba(53, 224, 146, 0.35) !important;
+}
+
+.dark .stx #planner div[style*="background: #0C1A22"] p.mono,
+.dark .stx #planner div[style*="background:#0C1A22"] p.mono,
+.dark .stx #planner div[style*="12, 26, 34"] p.mono,
+.dark .stx #planner div[style*="background: #06110C"] p.mono,
+.dark .stx #planner div[style*="background:#06110C"] p.mono {
+  color: #35E092 !important;
+}
+
+.dark .stx #planner div[style*="background: #0C1A22"] p:not(.mono),
+.dark .stx #planner div[style*="background:#0C1A22"] p:not(.mono),
+.dark .stx #planner div[style*="12, 26, 34"] p:not(.mono),
+.dark .stx #planner div[style*="background: #06110C"] p:not(.mono),
+.dark .stx #planner div[style*="background:#06110C"] p:not(.mono) {
+  color: #35E092 !important;
+}
+
+.dark .stx #planner p:last-child {
+  color: #93AB9D !important;
+}
+
+/* ====================================================================
+   DARK THEME GLOBAL TYPOGRAPHY CONTRAST IN US TAX PREPARATION (.stx)
+   ==================================================================== */
+.dark .stx section p.mono:not(.outline-num) {
+  color: #35E092 !important;
+}
+
+/* Floating interactive doc card in Hero/Section 01 stays clean light card */
+.dark .stx div[style*="animation: floatC"] p.mono {
+  color: #46594E !important;
+}
+
+.dark .stx div[style*="animation: floatC"] p.mono:nth-child(2) {
+  color: #0B140E !important;
+}
+
+.dark .stx div[style*="animation: floatC"] li {
+  color: #233229 !important;
+}
+
+/* Autoplay control button in Section 01 */
+.dark .stx button:has(svg)+button,
+.dark .stx div[style*="align-items: center"] button:not(.btn):not(.rail-btn):not(.step-btn) {
+  color: #CFE0D6 !important;
+}
+
+/* Section 03 Bookkeeping subtitle italic and badges */
+.dark .stx #bookkeeping p.serif {
+  color: #CFE0D6 !important;
+}
+
+.dark .stx #bookkeeping span[style*="background: #EEF0EC"],
+.dark .stx #bookkeeping span[style*="background:#EEF0EC"],
+.dark .stx #bookkeeping span[style*="background: #F1F3EF"],
+.dark .stx #bookkeeping span[style*="background:#F1F3EF"],
+.dark .stx #bookkeeping span[style*="background: #EEF9F3"],
+.dark .stx #bookkeeping span[style*="background:#EEF9F3"] {
+  background: #11261B !important;
+  color: #58EAA6 !important;
+}
+
+.dark .stx #bookkeeping span.mono span {
+  color: #58EAA6 !important;
+}
+
+/* Section 08 FAQ Accordion and Callout text in Dark Theme */
+.dark .stx #faq .faq-q {
+  color: #FFFFFF !important;
+}
+
+.dark .stx #faq .faq-q span {
+  color: #FFFFFF !important;
+}
+
+.dark .stx #faq .faq-q span.mono {
+  color: #35E092 !important;
+}
+
+.dark .stx #faq .faq-a p {
+  color: #CFE0D6 !important;
+}
+
+.dark .stx #faq p {
+  color: #CFE0D6 !important;
+}
+
+.dark .stx #faq p.mono {
+  color: #35E092 !important;
+}
+
+.dark .stx #faq a.btn-ghost-l {
+  color: #FFFFFF !important;
+  border-color: rgba(53, 224, 146, 0.35) !important;
+}
+
+.dark .stx #faq a.btn-ghost-l:hover {
+  background: rgba(53, 224, 146, 0.12) !important;
+  color: #FFFFFF !important;
+}
+
+/* Section 05 / 06 / 07 global dark mode headings and descriptions */
+.dark .stx h2 {
+  color: #FFFFFF !important;
+}
+
+.dark .stx section p:not(.mono):not(.outline-num) {
+  color: #CFE0D6;
+}
